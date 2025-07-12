@@ -348,23 +348,23 @@ html {
             color: #888;
             font-size: 1rem;
         }
-        .services {
+        .skills {
             padding: 100px 60px;
             background: #111;
             color: #fff;
         }
-        .services-content {
+        .skills-content {
             max-width: 1400px;
             margin: 0 auto;
         }
-        .services-header {
+        .skills-header {
             text-align: center;
             margin-bottom: 80px;
             max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
-        .services-title {
+        .skills-title {
             font-size: 0.9rem;
             font-weight: 600;
             color: #888;
@@ -373,7 +373,7 @@ html {
             font-family: 'Inter', sans-serif;
             text-transform: uppercase;
         }
-        .services h2 {
+        .skills h2 {
             font-size: 2.8rem;
             font-weight: 400;
             line-height: 1.3;
@@ -386,33 +386,67 @@ html {
             font-family: 'Playfair Display', serif;
             color: #a8b3a8;
         }
-        .services-grid {
+        .skills-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px 100px;
             max-width: 1000px;
             margin: 0 auto;
         }
-        .service-card {
+        .skill-card {
             text-align: center;
         }
-        .service-icon {
+        .skill-icon {
             margin-bottom: 30px;
             display: flex;
             justify-content: center;
         }
-        .service-card h3 {
+        .skill-card h3 {
             font-size: 1.8rem;
             font-weight: 500;
             margin-bottom: 20px;
             color: #fff;
             font-family: 'Inter', sans-serif;
         }
-        .service-card p {
+        .skill-card p {
             font-size: 1rem;
             line-height: 1.6;
             color: #ccc;
             font-family: 'Inter', sans-serif;
+        }
+        /* Skills Marquee */
+        .skills-marquee {
+            margin-top: 60px;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            background: rgba(168, 179, 168, 0.1);
+            border-radius: 50px;
+            padding: 20px 0;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+        }
+        .marquee-content span {
+            margin: 0 20px;
+            display: inline-block;
+        }
+        .marquee-content span:nth-child(even) {
+            color: #a8b3a8;
+            font-size: 1rem;
+        }
+        @keyframes marquee {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
         }
         /* Contact Section */
         .contact {
@@ -511,8 +545,30 @@ html {
             gap: 16px;
         }
 
-        .footer-contact p,
-        .footer-social p {
+        .footer-social a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #a8b3a8;
+        }
+
+        .footer-social a:hover svg {
+            transform: translateY(-2px);
+        }
+
+        .footer-social svg {
+            transition: all 0.3s ease;
+        }
+
+        .footer-contact p {
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             color: #fff;
@@ -522,8 +578,7 @@ html {
             text-decoration: none;
         }
 
-        .footer-contact p:hover,
-        .footer-social p:hover {
+        .footer-contact p:hover {
             color: #a8b3a8;
         }
 
@@ -574,6 +629,7 @@ html {
             color: #a8b3a8;
             margin-bottom: 1rem;
             font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
         }
 
         .brands-grid {
@@ -599,6 +655,45 @@ html {
 
         .brand-name:hover {
             opacity: 1;
+        }
+
+        .experience-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .experience-item .brand-name {
+            text-align: center;
+        }
+
+        .experience-period {
+            font-size: 0.875rem;
+            color: #a8b3a8;
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        .experience-description {
+            margin-top: 16px;
+            text-align: left;
+        }
+
+        .experience-description ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .experience-description li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .italic-text {
+            font-style: italic;
         }
 
         @media (max-width: 768px) {
@@ -783,6 +878,72 @@ html {
         .about-link:hover {
             color: #fff;
             border-bottom-color: #fff;
+        }
+
+        .resume-download {
+            display: flex;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .resume-btn {
+            background: transparent;
+            border: 2px solid #a8b3a8;
+            color: #a8b3a8;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .resume-btn:hover {
+            background: #a8b3a8;
+            color: #0a0a0a;
+            border-color: #a8b3a8;
+        }
+
+        .resume-btn:hover .btn-text-hover {
+            color: #0a0a0a;
+        }
+
+        .resume-btn .btn-text {
+            display: block;
+            transition: transform 0.4s ease, opacity 0.2s ease;
+            position: relative;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .resume-btn .btn-text-hover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(calc(-50% + 100%));
+            transition: transform 0.4s ease, opacity 0.2s ease;
+            white-space: nowrap;
+            opacity: 0;
+        }
+
+        .resume-btn:hover .btn-text {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .resume-btn:hover .btn-text-hover {
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
         }
 
         .about-me-details h3 {
