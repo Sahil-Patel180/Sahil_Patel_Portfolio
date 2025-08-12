@@ -37,12 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const mobileNavLinks = document.querySelectorAll('.nav-menu a');
 
     if (mobileMenuToggle && navMenu) {
+        // Initialize accessibility state
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-controls', 'primary-navigation');
+        navMenu.setAttribute('id', 'primary-navigation');
+
         mobileMenuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
-            
+            const expanded = navMenu.classList.contains('active');
+            this.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+            this.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
             // Prevent body scroll when menu is open
-            if (navMenu.classList.contains('active')) {
+            if (expanded) {
                 document.body.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
