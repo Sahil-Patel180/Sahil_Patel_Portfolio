@@ -83,4 +83,24 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // Achievements "Show more" toggle
+    const achvTable = document.querySelector('#achievements .achievements-table');
+    const achvToggle = document.getElementById('achievements-toggle');
+    if (achvTable && achvToggle) {
+        const btnText = achvToggle.querySelector('.btn-text');
+        const btnTextHover = achvToggle.querySelector('.btn-text-hover');
+        function setButton(expanded) {
+            const label = expanded ? 'Show less ✦' : 'Show more ✦';
+            if (btnText) btnText.textContent = label;
+            if (btnTextHover) btnTextHover.textContent = label;
+            achvToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        }
+        setButton(false);
+        achvToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            const expanded = achvTable.classList.toggle('expanded');
+            setButton(expanded);
+        });
+    }
 });

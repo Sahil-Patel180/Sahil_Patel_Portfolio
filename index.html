@@ -10,6 +10,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Inline helper styles for Achievements show more */
+        .achievements-table .achv-hidden { display: none; }
+        .achievements-table.expanded .achv-hidden { display: grid; }
+    </style>
     <script src="script.js" defer></script>
 </head>
 
@@ -198,7 +203,9 @@
                     <span>✦</span>
                     <span>Tableau</span>
                     <span>✦</span>
-                    <span>Cognos Analytics</span>
+                    <span>IBM Cognos Analytics</span>
+                    <span>✦</span>
+                    <span>Oracle Analytics</span>
                     <span>✦</span>
                     <span>SQL</span>
                     <span>✦</span>
@@ -564,7 +571,7 @@
                     <p>With a background in BCA Data Science from SRM Institute of Science and Technology, I've
                         developed a strong foundation in data-driven problem solving using tools like Power BI, Python,
                         SQL, and Excel. My academic journey and hands-on experiences have allowed me to explore various
-                        facets of data science—from crafting dynamic dashboards that visualize complex datasets, to
+                        facets of data science from crafting dynamic dashboards that visualize complex datasets, to
                         developing machine learning models that provide actionable insights. I find great satisfaction
                         in uncovering patterns, trends, and narratives hidden within data, and using them to drive
                         smarter decisions.</p>
@@ -590,6 +597,11 @@
                     <div class="table-cell">Achievement</div>
                     <div class="table-cell">Award/Certificate</div>
                 </div>
+                <!-- Latest achievement at the top -->
+                <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=F4EC956A6B18214B2FC5D6062116E87DEF684CB034D04B41C3502AC26B74524A" target="_blank" class="table-row">
+                    <div class="table-cell">Oracle Analytics Cloud 2025 Certified Professional</div>
+                    <div class="table-cell">Certificate<span class="external-link">↗</span></div>
+                </a>
                 <!-- Added: Latest achievement at the top -->
                 <a href="https://www.udemy.com/certificate/UC-92a8a8b8-18b8-4681-ac36-aa67318cd01d/" target="_blank" class="table-row">
                     <div class="table-cell">Business Intelligence Analyst course certification from Udemy</div>
@@ -601,41 +613,47 @@
                     <div class="table-cell">Certificate<span class="external-link">↗</span></div>
                 </a>
                 <a href="https://www.credly.com/earner/earned/badge/f445440b-fdcc-4396-9f9f-3a3c347f5c33" target="_blank"
-                    class="table-row">
+                    class="table-row achv-hidden">
                     <div class="table-cell">AWS Generative AI Foundation Badge</div>
                     <div class="table-cell">Certificate<span class="external-link">↗</span></div>
                 </a>
                 <a href="https://www.udemy.com/certificate/UC-095ed74f-0687-4511-9d16-a55b9e699aed/" target="_blank"
-                    class="table-row">
+                    class="table-row achv-hidden">
                     <div class="table-cell">Power BI certification from Udemy</div>
                     <div class="table-cell">Certificate<span class="external-link">↗</span></div>
                 </a>
                 <a href="https://www.udemy.com/certificate/UC-6ef983b4-7191-4d34-9c2d-ab21466c3351/" target="_blank"
-                    class="table-row">
+                    class="table-row achv-hidden">
                     <div class="table-cell">Tableau certification from Udemy</div>
                     <div class="table-cell">Certificate<span class="external-link">↗</span></div>
                 </a>
-                <a href="https://www.hackerrank.com/certificates/9f2482260d9c" target="_blank" class="table-row">
+                <a href="https://www.hackerrank.com/certificates/9f2482260d9c" target="_blank" class="table-row achv-hidden">
                     <div class="table-cell">SQL (Intermediate) certification from HackerRank</div>
                     <div class="table-cell">Certificate<span class="external-link">↗</span></div>
                 </a>
                 <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/4sLyCPgmsy8DA6Dh3/a87GpgE6tiku7q3gu_4sLyCPgmsy8DA6Dh3_MAJ4tuD52gZGs5tmj_1735671870883_completion_certificate.pdf"
-                    target="_blank" class="table-row">
+                    target="_blank" class="table-row achv-hidden">
                     <div class="table-cell">Power BI Job Simulation from PwC Switzerland / Forage</div>
                     <div class="table-cell">Certificate<span class="external-link">↗</span></div>
                 </a>
-                <div class="table-row">
+                <div class="table-row achv-hidden">
                     <div class="table-cell">NASA International Space Apps Challenge 2024</div>
                     <div class="table-cell">Participation</div>
                 </div>
-                <div class="table-row">
+                <div class="table-row achv-hidden">
                     <div class="table-cell">College Photography Competition</div>
                     <div class="table-cell">Winner</div>
                 </div>
-                <div class="table-row">
+                <div class="table-row achv-hidden">
                     <div class="table-cell">Mathematics (2nd semester) - 'O' Grade</div>
                     <div class="table-cell">Gold Medal</div>
                 </div>
+            </div>
+            <div class="see-all-projects achievements-actions">
+                <a href="#achievements" id="achievements-toggle" class="see-all-btn">
+                    <span class="btn-text">Show more ✦</span>
+                    <span class="btn-text-hover">Show more ✦</span>
+                </a>
             </div>
         </div>
     </section>
